@@ -58,7 +58,7 @@ public class NodeController {
 	@PostMapping("/node")
 	public ResponseEntity<Hashtable<String, Long>> createNote(@Valid @RequestBody Node node) {
 		if (node.getParent() != null) {
-			Node parent = nodeRepository.findOne(node.getParent().getId());
+			Node parent = nodeRepository.getOne(node.getParent().getId());
 			if (parent != null) {
 				node.setParent(parent);
 			} else {
@@ -76,7 +76,7 @@ public class NodeController {
 	 */
 	@GetMapping("/node/{id}")
 	public ResponseEntity<Node> getNodeById(@PathVariable(value = "id") Long nodeId) {
-		Node node = nodeRepository.findOne(nodeId);
+		Node node = nodeRepository.getOne(nodeId);
 		if (node == null) {
 			return ApiResponse.getInstance().notFound();
 		}
@@ -93,7 +93,7 @@ public class NodeController {
 	@PutMapping("/node/{id}")
 	public ResponseEntity<Hashtable<String, Long>> updateNote(@PathVariable(value = "id") Long nodeId,
 			@Valid @RequestBody Node nodeDetails) {
-		Node node = this.nodeRepository.findOne(nodeId);
+		Node node = this.nodeRepository.getOne(nodeId);
 		if (node == null) {
 			return ApiResponse.getInstance().notFound();
 		}
@@ -105,7 +105,7 @@ public class NodeController {
 
 		if (nodeDetails.getParent() != null) {
 			if (!NodeService.isDescendant(nodeDetails, this.nodeRepository)) {
-				Node parent = this.nodeRepository.findOne(nodeDetails.getParent().getId());
+				Node parent = this.nodeRepository.getOne(nodeDetails.getParent().getId());
 				if (parent != null && (parent.getId() != nodeDetails.getId())) {
 					node.setParent(parent);
 				} else {
@@ -125,7 +125,7 @@ public class NodeController {
 	 */
 	@DeleteMapping("/node/{id}")
 	public ResponseEntity<Hashtable<String, String>> deleteNote(@PathVariable(value = "id") Long nodeId) {
-		Node node = nodeRepository.findOne(nodeId);
+		Node node = nodeRepository.getOne(nodeId);
 		if (node == null) {
 			return ApiResponse.getInstance().notFound();
 		}

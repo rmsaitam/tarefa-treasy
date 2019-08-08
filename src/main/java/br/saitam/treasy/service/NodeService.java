@@ -18,7 +18,7 @@ public class NodeService {
 	 * @return boolean
 	 */
 	public static boolean isDescendant(Node node, NodeRepository repository) {
-		return search(repository.findOne(node.getId()), node.getParent().getId());
+		return search(repository.getOne(node.getId()), node.getParent().getId());
 	}
 
 	/**
