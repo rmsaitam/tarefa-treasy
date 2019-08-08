@@ -1,8 +1,8 @@
 package br.saitam.treasy.service;
 
 import java.util.Hashtable;
-import saitam.treeapi.model.Node;
-import saitam.treeapi.repository.NodeRepository;
+import br.saitam.treasy.model.Node;
+import br.saitam.treasy.repository.NodeRepository;
 
 /**
  * Camada para as regras de negócio

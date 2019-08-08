@@ -16,10 +16,10 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import saitam.treeapi.model.Node;
-import saitam.treeapi.repository.NodeRepository;
-import saitam.treeapi.resource.ApiResponse;
-import saitam.treeapi.service.NodeService;
+import br.saitam.treasy.model.Node;
+import br.saitam.treasy.repository.NodeRepository;
+import br.saitam.treasy.resource.ApiResponse;
+import br.saitam.treasy.service.NodeService;
 
 /**
  * Node controller

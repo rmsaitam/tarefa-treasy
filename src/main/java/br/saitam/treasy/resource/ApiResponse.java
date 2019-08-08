@@ -1,4 +1,4 @@
-package br.saitam.treasy.response;
+package br.saitam.treasy.resource;
 
 import java.util.List;
 import org.springframework.http.HttpHeaders;
