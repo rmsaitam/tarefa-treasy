@@ -18,6 +18,10 @@ Executar `mvn clean install`
 
 Utilize o Postman para testar as rotas
 
+http://localhost:8080 
+
+**Rotas:**
+
 `/nodes` para listar todos os nós
 
 `/node` para inserir um novo nó
