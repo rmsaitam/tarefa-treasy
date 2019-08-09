@@ -12,7 +12,7 @@ Verificar o IP do container MySQL
 
 `docker inspect -f '{{range .NetworkSettings.Networks}}{{.IPAddress}}{{end}}' mysql_treasy`
 
-Compare o resultado no arquivo _resources/application.properties_ na linha 2, provavelmente estar diferente, então substituir pelo resultado obtido.
+Compare o resultado no arquivo _resources/application.properties_ na linha 2, provavelmente esta diferente, então substituir pelo resultado obtido.
 
 Executar `mvn clean install`
 
