@@ -5,6 +5,7 @@
 Motivo: O banco de dados está em container do Docker com a imagem MySQL 5.7
 
 Clonar o repositório
+
 Executar o `docker-compose up -d` para o build do container MySQL
 
 Verificar o IP do container MySQL
